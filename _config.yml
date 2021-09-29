@@ -36,7 +36,7 @@ lin:
     github: MonticolaExplorator
 
 # Build settings
-theme: lin
+theme: jekyll-lin
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
