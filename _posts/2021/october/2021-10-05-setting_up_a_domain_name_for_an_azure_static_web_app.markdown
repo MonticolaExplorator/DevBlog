@@ -29,9 +29,9 @@ Now you have to go back to Google Domains and set the custom name servers for yo
 
 ![Setting up custom name servers on Google Domains](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/gd_fdelegate_dns.png)
 
-> When introducing the name of the servers on Google Domains, make sure you don't omit the trailing dot at the end of each >address. I recomend using the Azure _copy to clipboard_ button that appears when you over a server address
+> When introducing the name of the servers on Google Domains, make sure you don't omit the trailing dot at the end of each address. I recomend using the Azure _copy to clipboard_ button that appears when you over a server address
 >
->![Setting up custom name servers on Google Domains](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/azure_copy_to_clipboard_button)
+>![Setting up custom name servers on Google Domains](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/azure_copy_to_clipboard_button.png)
 
 Once you have introduced all server addresses, save them and click on _Switch to these settings_ to apply the changes. In order to verify everything is working correctly, you can run the next command. Take into account that the changes we have just made might take a while to propagate.
 
