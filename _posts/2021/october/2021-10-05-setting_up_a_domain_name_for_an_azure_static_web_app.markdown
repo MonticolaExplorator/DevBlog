@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Setting up a domain name for an Azure Static Web App with Google domains"
-date:   2021-10-02 21:18:23 +0200
+date:   2021-10-05 19:00:00 +0200
 categories: azure googledomains howto 
 ---
 
