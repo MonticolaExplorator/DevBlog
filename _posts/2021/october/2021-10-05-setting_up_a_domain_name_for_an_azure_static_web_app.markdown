@@ -19,19 +19,19 @@ First thing you have to do is go to [Azure portal](https://portal.azure.com/) an
 
 >Your Azure DNS zone and your static web app must be in the same subscription.
 
-![Creating an Azure DNS zone](/assets/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_create_dns_zone.png)
+![Creating an Azure DNS zone](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_create_dns_zone.png)
 
 Now, you have to find the name servers for your zone. You will find them easily if you navigate to your newly created DNS zone.
 
-![Finding name servers for an Azure DNS zone](/assets/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_find_dns_zone_dns.png)
+![Finding name servers for an Azure DNS zone](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_find_dns_zone_dns.png)
 
 Now you have to go back to Google Domains and set the custom name servers for your domain DNS. Add all the servers that your zone lists.
 
-![Setting up custom name servers on Google Domains](/assets/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/gd_fdelegate_dns.png)
+![Setting up custom name servers on Google Domains](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/gd_fdelegate_dns.png)
 
 > When introducing the name of the servers on Google Domains, make sure you don't omit the trailing dot at the end of each >address. I recomend using the Azure _copy to clipboard_ button that appears when you over a server address
 >
->![Setting up custom name servers on Google Domains](/assets/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/azure_copy_to_clipboard_button)
+>![Setting up custom name servers on Google Domains](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/azure_copy_to_clipboard_button)
 
 Once you have introduced all server addresses, save them and click on _Switch to these settings_ to apply the changes. In order to verify everything is working correctly, you can run the next command. Take into account that the changes we have just made might take a while to propagate.
 
@@ -61,11 +61,11 @@ Now we can continue start [setting up a custom domain to our static web app](htt
 
 On your Azure panel,navigate to your Static Web App. There, find the _Custom domains_ panel, where you have to hit the add button.
 
-![Adding a domain to the Azure Static Web App](/assets/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_add_custom_domain.png)
+![Adding a domain to the Azure Static Web App](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_add_custom_domain.png)
 
 Insert your domain name and hit the next button. On the next panel, you just have to hit the _Generate_ button and wait for the code to be generated.
 
-![Generating domain name validation code](/assets/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_copy_code.png)
+![Generating domain name validation code](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_copy_code.png)
 
 The state of the custom domain will change to validating. It will stay on that state until you confirm ownership of the domain by creating a TXT record on the DNS. To do so, go back to your Azure DNS zone and create the next record set.
 
@@ -77,7 +77,7 @@ The state of the custom domain will change to validating. It will stay on that s
 | TTL Unit  |  Leave default value |
 | Value |  The code generated for your custom domain |
 
-![Creating ownership record set on Azure DNS domain](/assets/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_create_validation_record.png)
+![Creating ownership record set on Azure DNS domain](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_create_validation_record.png)
 
 After a while -it can take several minutes- the state of your custom domain on the Azure Static Web app should change to _Ready_. 
 
@@ -96,7 +96,7 @@ Now, the only thing that is left is adding an alias record on your Azure DNS zon
 | TTL  |  Leave default value |
 | TTL Unit  |  Leave default value |
 
-![Creating an alias record set for a static web app](/assets/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_create_validation_record.png).
+![Creating an alias record set for a static web app](/assets/images/2021/october/setting_up_a_domain_name_for_an_azure_static_web_app/az_create_validation_record.png).
 
 And that was it. If you have followed through this it means you have now your static web app hosted on your fancy domain. And it also means I have written my first post. More to come!
 
