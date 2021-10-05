@@ -18,14 +18,15 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Exploring code
-email: monticolaexplorator@outlook.com
+title: In between the lines
+email: manueljavier_@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Tales of a developer. Also plants, birds, music and random thoughts
+  In between the lines is a blog about software development and technology. 
+  Incursions into plants, birds and music are to be expected. Sharing here anything that I learn on any of these areas will be a motivation to move forward, having fun in between the lines. 
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+twitter_username: _ManuelJavier_
 github_username:  MonticolaExplorator
 
 lin:
@@ -34,6 +35,8 @@ lin:
 
   social_links:
     github: MonticolaExplorator
+    twitter: _ManuelJavier_
+    stackoverflow: "7747594"
 
 # Build settings
 theme: jekyll-lin
