@@ -82,7 +82,7 @@ theme_mode: light  # [light|dark]
 img_cdn: 'https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images@0a003683c0c3ca549d12c309f9b3e03ea20981e5'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: 'assets/images/avatar.jpg
+avatar: 'assets/images/avatar.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
@@ -151,8 +151,8 @@ compress_html:
     envs: [development]
 
 exclude:
-  - "*.gem"
-  - "*.gemspec"
+  - '*.gem'
+  - '*.gemspec'
   - tools
   - docs
   - README.md
