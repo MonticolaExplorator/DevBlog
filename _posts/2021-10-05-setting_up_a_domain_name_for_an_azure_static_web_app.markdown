@@ -2,7 +2,8 @@
 layout: post
 title:  "Setting up a domain name for an Azure Static Web App with Google domains"
 date:   2021-10-05 19:00:00 +0200
-categories: azure googledomains howto 
+categories: [Web, DNS]
+tags: [Azure, Google Domains, Static Web App, DNS] 
 ---
 
 So I have an empty blog right now, which also has a not so fancy domain name. Well, let's blog about how to fix it. Great, this blog is bootstrapping itself! Wait, now you know I host this blog on [Azure](https://azure.microsoft.com/en-us/) and that I bought my domain using [Google Domains](https://domains.google/), I hope I am not giving away too many things.
