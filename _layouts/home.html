@@ -50,13 +50,6 @@ layout: page
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </h1>
 
-    <div class="post-content">
-      <p>
-        {% include no-linenos.html content=post.content %}
-        {{ content | markdownify | strip_html | truncate: 200 }}
-      </p>
-    </div>
-
     <div class="post-meta text-muted d-flex justify-content-between">
 
       <div>
@@ -85,6 +78,13 @@ layout: page
       {% endif %}
 
     </div> <!-- .post-meta -->
+
+    <div class="post-content">
+      <p>
+        {% include no-linenos.html content=post.content %}
+        {{ content | markdownify | strip_html | truncate: 200 }}
+      </p>
+    </div>
 
   </div> <!-- .post-review -->
 
