@@ -69,6 +69,15 @@ layout: page
         </span>
         {% endif %}
       </div>
+      {% if post.image.src %}
+      <div>
+        <img src="{{ post.image.src }}"
+          class="preview-img"
+          alt="{{ post.image.alt | default: "Preview Image" }}"
+          {% if page.image.width %}width="{{ post.image.width }}"{% endif %}
+          {% if page.image.height %}height="{{ post.image.height }}"{% endif %}>
+        </div>
+      {% endif %}
 
       {% if post.pin %}
       <div class="pin">
