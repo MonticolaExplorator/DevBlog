@@ -3,7 +3,7 @@ layout: post
 title:  "Uploading files from a .NET 5 application to a Windows machine using Powershell Remote"
 date:   2021-10-21 19:00:00 +0200
 categories: [Net, Powershell]
-tags: [.Net 5, Powershell, Powershell remoting, upload file]
+tags: [.Net 5, Powershell, Powershell remoting]
 ---
 
 I was faced the other day with the task of running some Powershell scripts on a remote Windows machine from a .NET 5 application. I decided to use [Powershell remoting](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7.1) to run the commands on the target machine, using [Microsoft.PowerShell.SDK nuget package](https://www.nuget.org/packages/Microsoft.PowerShell.SDK/) to host Powershell on the .NET 5 application.
