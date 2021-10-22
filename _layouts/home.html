@@ -80,6 +80,13 @@ layout: page
     </div> <!-- .post-meta -->
 
     <div class="post-content">
+      {% if post.image.src %}
+      <img  src="{{ post.image.src }}"
+        class="preview-img"
+        alt="{{ post.image.alt | default: "Preview Image" }}"
+        {% if page.image.width %}width="{{ post.image.width }}"{% endif %}
+        {% if page.image.height %}height="{{ post.image.height }}"{% endif %}>
+      {% endif %}
       <p>
         {% include no-linenos.html content=post.content %}
         {{ content | markdownify | strip_html | truncate: 200 }}
