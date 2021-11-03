@@ -43,7 +43,7 @@ body {
   background: var(--body-bg);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
-  font-family: 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
+  font-family: 'Helvetica', 'Georgia', 'Open Sans', sans-serif;
 }
 
 /* --- Scrollbar --- */
@@ -90,7 +90,7 @@ $scrollbar-size: 7px;
 h1 {
   @extend %heading;
 
-  font-size: 1.8rem;
+  font-size: 2.7rem;
 }
 
 h2 {
@@ -1489,7 +1489,7 @@ $sidebar-display: "sidebar-display";
   }
 
   .post-content {
-    font-size: 1.03rem;
+    font-size: 1.1rem;
   }
 
   footer > div.d-felx {
