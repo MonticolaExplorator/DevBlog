@@ -43,7 +43,7 @@ body {
   background: var(--body-bg);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
-  font-family: 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
+  font-family: 'Helvetica', 'Georgia', 'Open Sans', sans-serif;
 }
 
 /* --- Scrollbar --- */
@@ -90,7 +90,7 @@ $scrollbar-size: 7px;
 h1 {
   @extend %heading;
 
-  font-size: 1.8rem;
+  font-size: 2.7rem;
 }
 
 h2 {
@@ -662,17 +662,27 @@ $sidebar-display: "sidebar-display";
     &:hover {
       @include no-text-decoration;
 
-      color: var(--sidebar-active-color) !important;
+      color: var(--sidebar-active-color);
+    }
+    i 
+    {
+      &:hover {
+        @include no-text-decoration;
+  
+        color: var(--sidebar-active-color);
+      }
     }
   }
 
   #avatar {
+    
     > a {
+      background: rgba(222, 222, 222, 0.7);
+      clip-path: polygon(41.666% 0%, 58.334% 0%, 100% 50%, 58.334% 100%, 41.666% 100%, 0% 50%);
+
       display: block;
       width: 6rem;
       height: 6rem;
-      border-radius: 50%;
-      border: 2px solid rgba(222, 222, 222, 0.7);
       overflow: hidden;
       transform: translateZ(0); // fixed the zoom in Safari
       -webkit-transition: border-color 0.35s ease-in-out;
@@ -687,10 +697,12 @@ $sidebar-display: "sidebar-display";
     img {
       width: 100%;
       height: 100%;
+      
       -webkit-transition: transform 0.5s;
       -moz-transition: transform 0.5s;
       transition: transform 0.5s;
-
+      clip-path: polygon(41.666% 3%, 58.334% 3%, 97% 50%, 58.334% 97%, 41.666% 97%, 3% 50%);
+      
       &:hover {
         -ms-transform: scale(1.2);
         -moz-transform: scale(1.2);
@@ -712,7 +724,7 @@ $sidebar-display: "sidebar-display";
   }
 
   .site-subtitle {
-    font-size: 95%;
+    font-size: 110%;
     color: var(--sidebar-muted-color);
     line-height: 1.2rem;
     word-spacing: 1px;
@@ -807,7 +819,8 @@ $sidebar-display: "sidebar-display";
   .sidebar-bottom {
     font-size: 1.2rem;
     margin-bottom: 2.1rem;
-
+    margin-top: 1rem;
+    
     @include ml-mr(auto);
     @include pl-pr(1rem);
 
@@ -1489,7 +1502,7 @@ $sidebar-display: "sidebar-display";
   }
 
   .post-content {
-    font-size: 1.03rem;
+    font-size: 1.1rem;
   }
 
   footer > div.d-felx {
@@ -1579,8 +1592,8 @@ $sidebar-display: "sidebar-display";
         @extend %profile-ml;
 
         > a {
-          width: 6.2rem;
-          height: 6.2rem;
+          width: 10rem;
+          height: 10rem;
           &.mx-auto {
             margin-left: 0 !important;
           }
@@ -1591,7 +1604,7 @@ $sidebar-display: "sidebar-display";
         @extend %profile-ml;
 
         a {
-          font-size: 1.7rem;
+          font-size: 3.6rem;
           letter-spacing: 1px;
         }
       }
@@ -1636,7 +1649,7 @@ $sidebar-display: "sidebar-display";
       padding-left: 3.5rem;
       width: 100%;
 
-      $icon-block-size: 2rem;
+      $icon-block-size: 2.5rem;
 
       &.justify-content-center {
         -webkit-box-pack: start !important;
@@ -1646,7 +1659,7 @@ $sidebar-display: "sidebar-display";
 
       > span,
       > a {
-        @include ml-mr(0.15rem);
+        @include ml-mr(1.5rem);
 
         height: $icon-block-size;
         margin-bottom: 0.5rem; // wrap line
@@ -1654,7 +1667,7 @@ $sidebar-display: "sidebar-display";
 
       i {
         background-color: var(--sidebar-btn-bg);
-        font-size: 1rem;
+        font-size: 1.5rem;
         width: $icon-block-size;
         height: $icon-block-size;
         border-radius: 50%;
