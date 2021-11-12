@@ -375,7 +375,7 @@ footer {
 }
 
 .post-meta {
-  font-size: 0.85rem;
+  font-size: 1.5rem;
   word-spacing: 1px;
   a {
     @extend %link-color;
@@ -678,7 +678,7 @@ $sidebar-display: "sidebar-display";
     
     > a {
       background: rgba(222, 222, 222, 0.7);
-      clip-path: polygon(41.666% 0%, 58.334% 0%, 100% 50%, 58.334% 100%, 41.666% 100%, 0% 50%);
+      clip-path: polygon(41.666% 0%, 58.334% 0%, 100% 41.666%, 100% 58.334%, 58.334% 100%, 41.666% 100%, 0% 58.334%, 0% 41.666%);
 
       display: block;
       width: 6rem;
@@ -701,7 +701,7 @@ $sidebar-display: "sidebar-display";
       -webkit-transition: transform 0.5s;
       -moz-transition: transform 0.5s;
       transition: transform 0.5s;
-      clip-path: polygon(41.666% 3%, 58.334% 3%, 97% 50%, 58.334% 97%, 41.666% 97%, 3% 50%);
+      clip-path: polygon(41.666% 3%, 58.334% 3%, 97% 41.666%, 97% 58.334%, 58.334% 97%, 41.666% 97%, 3% 58.334%, 3% 41.666%);
       
       &:hover {
         -ms-transform: scale(1.2);
@@ -866,6 +866,236 @@ $sidebar-display: "sidebar-display";
 
 } // #sidebar
 
+#topbarbig {
+  @include pl-pr(0);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: $topbarbig-height;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 99;
+  background: var(--sidebar-bg);
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  // /* Hide scrollbar for IE, Edge and Firefox */
+  // -ms-overflow-style: none;  /* IE and Edge */
+  // scrollbar-width: none;  /* Firefox */
+
+  // a {
+  //   @extend %sidebar-links;
+
+  //   &:hover {
+  //     @include no-text-decoration;
+
+  //     color: var(--sidebar-active-color);
+  //   }
+  //   i 
+  //   {
+  //     &:hover {
+  //       @include no-text-decoration;
+  
+  //       color: var(--sidebar-active-color);
+  //     }
+  //   }
+  // }
+
+  // #avatar {
+    
+  //   > a {
+  //     background: rgba(222, 222, 222, 0.7);
+  //     clip-path: polygon(41.666% 0%, 58.334% 0%, 100% 41.666%, 100% 58.334%, 58.334% 100%, 41.666% 100%, 0% 58.334%, 0% 41.666%);
+
+  //     display: block;
+  //     width: 6rem;
+  //     height: 6rem;
+  //     overflow: hidden;
+  //     transform: translateZ(0); // fixed the zoom in Safari
+  //     -webkit-transition: border-color 0.35s ease-in-out;
+  //     -moz-transition: border-color 0.35s ease-in-out;
+  //     transition: border-color 0.35s ease-in-out;
+
+  //     &:hover {
+  //       border-color: white;
+  //     }
+  //   }
+
+  //   img {
+  //     width: 100%;
+  //     height: 100%;
+      
+  //     -webkit-transition: transform 0.5s;
+  //     -moz-transition: transform 0.5s;
+  //     transition: transform 0.5s;
+  //     clip-path: polygon(41.666% 3%, 58.334% 3%, 97% 41.666%, 97% 58.334%, 58.334% 97%, 41.666% 97%, 3% 58.334%, 3% 41.666%);
+      
+  //     &:hover {
+  //       -ms-transform: scale(1.2);
+  //       -moz-transform: scale(1.2);
+  //       -webkit-transform: scale(1.2);
+  //       transform: scale(1.2);
+  //     }
+  //   }
+  // } // #avatar
+
+  // .site-title {
+  //   a {
+  //     @extend %clickable-transition;
+
+  //     font-weight: 900;
+  //     font-size: 1.5rem;
+  //     letter-spacing: 0.5px;
+  //     color: rgba(134, 133, 133, 99%);
+  //   }
+  // }
+
+  // .site-subtitle {
+  //   font-size: 110%;
+  //   color: var(--sidebar-muted-color);
+  //   line-height: 1.2rem;
+  //   word-spacing: 1px;
+  //   margin: 0.5rem 1.5rem 0.5rem 1.5rem;
+  //   min-height: 3rem; // avoid vertical shifting in multi-line words
+  //   user-select: none;
+  // }
+
+  // .nav-link {
+  //   border-radius: 0;
+  //   font-size: 0.95rem;
+  //   font-weight: 600;
+  //   letter-spacing: 1px;
+  //   display: table-cell;
+  //   vertical-align: middle;
+  // }
+
+  // .nav-item {
+  //   text-align: center;
+  //   display: table;
+  //   height: $tab-height;
+
+  //   &.active {
+  //     .nav-link {
+  //       color: var(--sidebar-active-color);
+  //     }
+  //   }
+
+  //   &:not(.active) > a {
+  //     @extend %clickable-transition;
+  //   }
+  // }
+
+  // ul {
+  //   height: $tab-height * $tab-count;
+  //   margin-bottom: 2rem;
+  //   padding-left: 0;
+
+  //   li {
+  //     width: 100%;
+
+  //     &:last-child {
+
+  //       a {
+  //         position: relative;
+  //         left: $cursor-width / 2;
+  //         width: 100%;
+  //       }
+
+  //       &::after { // the cursor
+  //         display: table;
+  //         visibility: hidden;
+  //         content: "";
+  //         position: relative;
+  //         right: 1px;
+  //         width: $cursor-width;
+  //         height: $tab-cursor-height;
+  //         border-radius: 1px;
+  //         background-color: var(--nav-cursor-color);
+  //         pointer-events: none;
+  //       }
+  //     }
+  //   } // li
+
+  //   @mixin fix-cursor($top) {
+  //     top: $top;
+  //     visibility: visible;
+  //   }
+
+  //   @for $i from 1 through $tab-count {
+  //     $offset: $tab-count - $i;
+  //     $top: -$offset * $tab-height + ($tab-height - $tab-cursor-height) / 2;
+
+  //     @if $i < $tab-count {
+  //       > li.active:nth-child(#{$i}),
+  //       > li.nav-item:nth-child(#{$i}):hover {
+  //         ~ li:last-child::after {
+  //           @include fix-cursor($top);
+  //         }
+  //       }
+  //     } @else {
+  //       > li.active:nth-child(#{$i}):last-child::after,
+  //       > li.nav-item:nth-child(#{$i}):last-child:hover::after {
+  //         @include fix-cursor($top);
+  //       }
+  //     }
+
+  //   } // @for
+
+  // } // ul
+
+  // .sidebar-bottom {
+  //   font-size: 1.2rem;
+  //   margin-bottom: 2.1rem;
+  //   margin-top: 1rem;
+    
+  //   @include ml-mr(auto);
+  //   @include pl-pr(1rem);
+
+  //   %icon {
+  //     width: 2.4rem;
+  //     text-align: center;
+  //   }
+
+  //   a {
+  //     @extend %icon;
+  //     @extend %clickable-transition;
+  //   }
+
+  //   i {
+  //     line-height: 1.75rem; // default line-height in body
+  //     vertical-align: middle;
+  //   }
+
+  //   #mode-toggle-wrapper {
+  //     @extend %icon;
+
+  //     i {
+  //       @extend %sidebar-links;
+  //       @extend %cursor-pointer;
+  //       @extend %clickable-transition;
+  //     }
+
+  //   }
+
+  //   .icon-border {
+  //     background-color: var(--sidebar-muted-color);
+  //     content: "";
+  //     width: 3px;
+  //     height: 3px;
+  //     border-radius: 50%;
+  //   }
+
+  //   #mode-toggle-wrapper:hover > i {
+  //     color: var(--sidebar-active-color);
+  //   }
+
+  // } // .sidebar-bottom
+
+} // #topbarbig
 @media (hover: hover) {
   #sidebar ul > li:last-child::after {
     -webkit-transition: top 0.5s ease;
