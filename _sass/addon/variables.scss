@@ -18,13 +18,8 @@ $cursor-width: 2px !default;    // the cursor width of the selected tab
 
 /* other framework sizes */
 
-$topbar-height: 3rem !default;
-
-/* topbarbig */
-
-$topbarbig-height: 260px !default;        // the basic width
-$topbarbig-height-small: 210px !default;  // screen width: >= 850px, <= 1199px (iPad landscape)
-$topbarbig-height-large: 350px !default;  // screen width: >= 1650px
+$topbar-height: 3rem !default;          // the basic height
+$topbar-height-small: 14rem !default;    // screen width: < 850px
 
 $footer-height: 5rem !default;
 $footer-height-mobile: 6rem !default;   // screen width: <= 576px

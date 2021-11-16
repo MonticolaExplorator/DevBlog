@@ -3,7 +3,7 @@
 -->
 
 <div id="topbar-wrapper" class="row justify-content-center topbar-down">
-  <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between">
+  <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between d-flex flex-column align-items-end">
     <span id="breadcrumb">
 
     {% assign paths = page.url | split: '/' %}
@@ -45,7 +45,7 @@
 
     </span><!-- endof #breadcrumb -->
 
-    <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
+    <!-- <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i> -->
 
     <div id="topbar-title">
       {% if page.layout == 'home' %}
@@ -57,7 +57,84 @@
         {{- site.data.locales[lang].layout[page.layout] | default: page.layout | capitalize -}}
       {% endif %}
     </div>
+    
+    <div id="topbaravatar">
+      <a href="{{ '/' | relative_url }}" alt="avatar" class="mx-auto">
+        {% if site.avatar != '' and site.avatar %}
+          {% capture avatar_url %}
+            {%- if site.avatar contains '://' -%}
+              {{ site.avatar }}
+            {%- elsif site.img_cdn != '' and site.img_cdn -%}
+              {{ site.avatar | prepend: site.img_cdn }}
+            {%- else -%}
+              {{ site.avatar | relative_url }}
+            {%- endif -%}
+          {% endcapture %}
+          <img src="{{ avatar_url }}" alt="avatar" onerror="this.style.display='none'">
+        {% endif %}
+      </a>
+    </div>
+    <div class="topbar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
+      {% for entry in site.data.contact %}
+        {% capture url %}
+          {%- if entry.type == 'github' -%}
+            https://github.com/{{ site.github.username }}
+          {%- elsif entry.type == 'twitter' -%}
+            https://twitter.com/{{ site.twitter.username }}
+          {%- elsif entry.type == 'email' -%}
+            {% assign email = site.social.email | split: '@' %}
+            javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+          {%- elsif entry.type == 'rss' -%}
+            {{ "/feed.xml" | relative_url }}
+          {%- else -%}
+            {{ entry.url }}
+          {%- endif -%}
+        {% endcapture %}
+  
+        {% if url %}
+        <a href="{{ url }}" aria-label="{{ entry.type }}"
+          {% unless site.theme_mode %}class="order-{{ forloop.index | plus: 2 }}"{% endunless %}
+          {% unless entry.noblank %}target="_blank" rel="noopener"{% endunless %}>
+          <i class="{{ entry.icon }}"></i>
+        </a>
+        {% endif %}
+  
+      {% endfor %}
+  
+      {% unless site.theme_mode %}
+        {% if site.data.contact.size > 0 %}
+          <span class="icon-border order-2"></span>
+        {% endif %}
+  
+        <span id="mode-toggle-wrapper" class="order-1">
+          {% include mode-toggle.html %}
+        </span>
+      {% endunless %}
+  
+    </div> <!-- .topbar-bottom -->
 
+    <div id="topbar-tabs">
+      <ul class="w-100">
+        <!-- home -->
+        <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+          <a href="{{ '/' | relative_url }}" class="nav-link">
+            <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+            <span>{{ site.data.locales[lang].tabs.home | upcase }}</span>
+          </a>
+        </li>
+        <!-- the real tabs -->
+        {% for tab in site.tabs %}
+        <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+          <a href="{{ tab.url | relative_url }}" class="nav-link">
+            <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
+            {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+
+            <span>{{ site.data.locales[lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+          </a>
+        </li> <!-- .nav-item -->
+        {% endfor %}
+      </ul> <!-- ul.nav.flex-column -->
+    </div>
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
     <span id="search-wrapper" class="align-items-center">
       <i class="fas fa-search fa-fw"></i>
@@ -67,5 +144,8 @@
     </span>
     <span id="search-cancel" >{{ site.data.locales[lang].search.cancel }}</span>
   </div>
+  
+  
+
 
 </div>
