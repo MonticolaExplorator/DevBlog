@@ -1274,7 +1274,15 @@ $sidebar-display: "sidebar-display";
  {content} <= 849px screen width
 
 */
-
+@media all and (max-width: 576px) {
+  #topbar {
+    .nav-link {
+      font-size: 0.6rem;
+    }
+    
+  } // #topbar
+  
+}
 @media all and (max-width: 576px) {
 
   $footer-height: $footer-height-mobile; // overwrite
