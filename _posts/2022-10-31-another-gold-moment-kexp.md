@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Another gold moment at KEXP, this time with Julia Jackin"
-date:   2022-30-10 10:00:00 +0100
+date:   2022-11-17 10:00:00 +0100
 categories: [Music, Broadcast shows]
 tags: [Julia Jacklin, KEXP]
 ---
