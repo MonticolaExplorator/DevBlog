@@ -21,7 +21,7 @@ var value = new {Amount = 0.1m, Currency = "Eur"};
 Console.WriteLine($"Cost is {value.Amount} {value.Currency}");
 ~~~~
 
-On the previous sentence, we are creating a _value_ object that has an _Amount_ and a _Currency_ properties, and we can make reference to those properties later in the code. But dit not have to explicitly declare a type. This feature is specially handy when working with [LINQ](https://learn.microsoft.com/en-us/dotnet/csharp/linq/). For instance, if we have a collection of bank customers with _Expense_ and _Income_ and we want to select the balance for each one, we can simply do:
+On the previous sentence, we are creating a _value_ object that has an _Amount_ and a _Currency_ properties, and we can make reference to those properties later in the code. But we dit not have to explicitly declare a type. This feature is specially handy when working with [LINQ](https://learn.microsoft.com/en-us/dotnet/csharp/linq/). For instance, if we have a collection of bank customers with _Expense_ and _Income_ and we want to select the balance for each one, we can simply do:
 
 ~~~~c#
 var balances = customers.Select(c => new {Balance = c.Income - c.Expense, Currency = c.Currency})
@@ -41,9 +41,10 @@ Now we can start making ourselves questions.
 
 ## What does the compiler do with these expressions?
 
-Well, the answer could be: which compiler? Maybe it is better to ask what should the compiler do with anonymous object creation expressions. The answer is on the [C# language specification](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/expressions#117157-anonymous-object-creation-expressions). It can be a little bit overwhelming, but it is worth it to give it a shoot and try to see what we can make out of that.
+Well, the answer could be: which compiler? Maybe it is better to ask what should the compiler do with anonymous object creation expressions. The answer is on the [C# language specification](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/expressions#117157-anonymous-object-creation-expressions). It can be a little bit overwhelming, but it is worth it to give it a shot and try to see what we can make out of that.
 
 > An anonymous object initializer declares an anonymous type and returns an instance of that type. An anonymous type is a nameless class type that inherits directly from object. The members of an anonymous type are a sequence of read-only properties inferred from the anonymous object initializer used to create an instance of the type. Specifically, an anonymous object initializer of the form new { p₁ = e₁ , p₂ = e₂ , … pᵥ = eᵥ } declares an anonymous type of the form:
+
 ~~~~c#
 class __Anonymous1
 {
@@ -77,17 +78,17 @@ Another interesting piece of the specification is:
 
 > Within the same program, two anonymous object initializers that specify a sequence of properties of the same names and compile-time types in the same order will produce instances of the same anonymous type.
 
-So, to make it short, the compiler will be creating a new nameless class for us.
+So, to make it short, the compiler will be creating a new nameless class for us. And I will create just a single class if it finds to anonymous with the same property names, the same property types and declared in the same order.
 
 ## Why does not the language allow to give anonymous types a name?
 
 Probably stupid question since they will no longer be anonymous. So for this one, let's assume they are implicitly defined types. We could have
 
 ~~~~c#
-var balances = customers.Select(c => new class PaymentsBalance{Balance = c.Income - c.Expense, Currency = c.Currency})
+var balances = customers.Select(c => new public class PaymentsBalance{Balance = c.Income - c.Expense, Currency = c.Currency})
 ~~~~
 
-And then use it elsewhere in the code. But, what would be the visibility of that class? What would be the namespace? My guess is that it is not worth it and they don't want the language to go in that direction. If the type is important enough that you will be giving it a name, you should be ok having to define it explicitly.
+And then use it elsewhere in the code. My guess is that it is not worth it and they don't want the language to go in that direction. If the type is important enough that you will be giving it a name, you should be ok having to define it explicitly.
 
 ## Can I create an anonymous type dynamically?
 
