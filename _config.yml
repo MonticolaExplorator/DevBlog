@@ -83,6 +83,7 @@ img_cdn: #no cdn
 
 # the avatar on sidebar, support local or CORS resources
 avatar: 'assets/images/avatar.jpg'
+logo: 'assets/images/avatar.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
@@ -110,7 +111,6 @@ collections:
   tabs:
     output: true
     sort_by: order
-
 
 defaults:
   -
@@ -169,3 +169,6 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+plugins:
+  - jekyll-seo-tag
