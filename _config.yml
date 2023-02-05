@@ -137,6 +137,11 @@ defaults:
       layout: page
       permalink: /:title/
       dynamic_title: true    # Hide title in mobile screens.
+  - 
+    scope:
+      path: ""
+    values:
+      image: assets/images/avatar.jpg
 
 sass:
   style: compressed
