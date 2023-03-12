@@ -83,7 +83,7 @@ img_cdn: #no cdn
 
 # the avatar on sidebar, support local or CORS resources
 avatar: 'assets/images/avatar.jpg'
-logo: 'assets/images/avatar.jpg'
+logo: 'assets/images/avatar_small.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
