@@ -5,7 +5,7 @@ icon: fas fa-user-circle
 permalink: /about/
 ---
 
-Hi there! My name is Manuel Javier and I'm a software developer. I started this blog because I was curious how one would create a developer blog/portfolio. I had one spare Azure subscription and next thing you know I was wrapping my head around Jenkyll and spending half an hour writing this bio.
+Hi there! My name is Manuel Javier and I'm a software developer. I started this blog because I was curious how one would create a developer blog/portfolio. I had one spare Azure subscription and next thing you know I was wrapping my head around Jekyll and spending half an hour writing this bio.
 
 ## Professional
 
@@ -35,7 +35,7 @@ Having said that, this is my list of goals for this year:
 - Whatch a bird that I have not seen before
 - Enjoy sailing and coming last on every race
 - Do exercise on a regular basis
-- Go hinking at least 5 times
+- Go hiking at least 5 times
 - Enjoy a foreign country/city 
 
 ## Archive of objectives
