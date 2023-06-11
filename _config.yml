@@ -177,3 +177,4 @@ jekyll-archives:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap

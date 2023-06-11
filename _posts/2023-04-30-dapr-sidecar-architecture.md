@@ -2,6 +2,8 @@
 layout: post
 title:  "Dapr and the sidecar architecture"
 date:   2023-06-10 10:00:00 +0200
+permalink: posts/dapr-sidecar-architecture
+description: Brief introduction into dapr
 categories: [Architecture, Microservices]
 image:
   src: /assets/images/2023/june/dapr/dapr-stacked-color.png
